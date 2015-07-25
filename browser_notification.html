@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>浏览器通知</title>
+		<script type="text/javascript">
+		function notifyMe(msg) {
+		  if (!("Notification" in window)) {// 确认浏览器是否支付通知
+			alert("此浏览器不支持桌面通知");
+		  } else if (Notification.permission === "granted") {// 检查是否有通知权限
+			// 如果OK了那就进行通知
+			var notification = new Notification(msg);
+		  } else if (Notification.permission !== 'denied') {// 还没有的那就请求权限
+			Notification.requestPermission(function (permission) {
+			  // 如果用户接受则进行授权
+			  if (permission === "granted") {
+				var notification = new Notification(msg);
+			  }
+			});
+		  }
+		  playSound('notification_sound/gotitem');
+		  notifyWithTitle(msg);
+		}
+		
+		// filename : 无后缀文件名
+		function playSound(filename){
+			document.getElementById("sound").innerHTML='<audio autoplay="autoplay"><source src="' + filename + '.mp3" type="audio/mpeg" /><source src="' + filename + '.ogg" type="audio/ogg" /><embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3" /></audio>';
+		}
+		
+		function notifyWithTitle(msg){
+			var oldTitle = top.document.title;
+			var s = msg.split("");
+			function func(){
+				s.push(s[0]);
+				s.shift();// 去掉数组的第一个元素
+				top.document.title = s.join("");
+			}
+			var titleInte = top.setInterval(func, 900);//设置时间间隔运行
+			top.setTimeout('clearInterval(' + titleInte +');top.document.title ="'+oldTitle+'"', 13000);
+		}
+		
+	</script>
+    </head>
+	
+    <body>
+         <button onclick="notifyMe('您好！这是通知！')">使用浏览器通知</button>
+		 <div id="sound"></div>
+		 
+    </body>
+</html>

@@ -1,0 +1,17 @@
+package:http://www.freesound.org/people/Kastenfrosch/sounds/?page=2
+download from: http://www.freesound.org/people/Kastenfrosch/sounds/162467/
+Author:Kastenfrosch
+
+协议信息：This work is licensed under the Creative Commons 0 License.（看截图或者链接，或者：http://creativecommons.org/publicdomain/zero/1.0/）
+
+download filename:162467__kastenfrosch__gotitem.mp3
+Converted filename:gotitem.mp3 gotitem.ogg
+
+download filename:162464__kastenfrosch__message.mp3
+Converted filename:warn.mp3 warn.ogg
+
+download filename:162471__kastenfrosch__sound5.mp3
+Converted filename:fail.mp3 fail.ogg
+
+download filename:162473__kastenfrosch__successful.mp3
+Converted filename:common.mp3 common.ogg
