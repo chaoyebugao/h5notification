@@ -1,2 +1,4 @@
-# h5notification
+﻿# h5notification
 现代浏览器消息通知
+支持Chrome和Firefox及其内核运行的浏览器
+本示例演示了一个简单封装的桌面级的通知和title的跑马灯显示
